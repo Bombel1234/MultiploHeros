@@ -1,0 +1,46 @@
+<MostVisitedCard>
+    size_hint_y:None
+    height:'100dp'
+    MDHeroFrom:
+        id:hero_name_city
+        size_hint:None,None
+        size:'100dp', root.height
+        on_transform_in:
+            root.hero_name_beaches_transform(lbl_city, .2, 1, 24)
+        on_transform_out:
+            root.hero_name_beaches_transform(lbl_city, .2, .4, -dp(48))
+        MDRelativeLayout:
+            size_hint:None,None
+            size:'200dp', root.height
+            ScaleLabel:
+                id:lbl_city
+                text:root.city_name
+                bold:True
+                font_style:'H3'
+                scale_value_x:.4
+                scale_value_y:.4
+                size_hint:None,None
+                size:'200dp', root.height
+                x:-dp(48)
+    MDHeroFrom:
+        id:hero_image_city
+        size_hint:.8, None
+        height:root.height
+        FitImage:
+            size_hint:.8, None
+            height:root.height
+            source:root.source
+    MDHeroFrom:
+        id:hero_button_plus
+        size_hint:None, None
+        size:root.height, root.height
+        pos_hint:{'right':1}
+        MDRelativeLayout:
+            size_hint:None, None
+            size:root.height, root.height
+            md_bg_color:'black'
+            MDIconButton:
+                icon:'plus'
+                opposite_colors:True
+                pos_hint:{'center_x':.5, 'center_y':.5}
+                on_release:root.dispatch("on_release")

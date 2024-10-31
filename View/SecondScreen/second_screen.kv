@@ -1,0 +1,104 @@
+<SecondScreenView>
+    md_bg_color:app.theme_cls.bg_dark
+    heroes_to:
+        [\
+        hero_name_beaches,\
+        hero_image_city,\
+        hero_name_city,\
+        hero_button_plus,\
+        hero_navigate\
+        ]
+    MDBoxLayout:
+        orientation:'vertical'
+        MDTopAppBar:
+            md_bg_color:root.md_bg_color
+            specific_text_color:'black'
+            elevation:0
+            right_action_items:[['magnify', lambda x:x]]
+            left_action_items:
+                [\
+                [\
+                'chevron-left', lambda x:root.controller.on_tab_back_toolbar_button(),
+
+                ]
+                ]
+        MDBoxLayout:
+            adaptive_height:True
+            spacing:'8dp'
+            padding:0,0,'24dp',0
+            MDSeparator:
+                size_hint_x:None
+                width:'36dp'
+                color:'black'
+                pos_hint:{'center_y':.5}
+            MDIcon:
+                icon:'weather-sunny'
+                pos_hint:{'center_y':.5}
+            MDHeroTo:
+                id:hero_name_beaches
+                size_hint:None,None
+                size:'140dp', '42dp'
+        MDWidget:
+            size_hint_y:None
+            height:'12dp'
+        MDFloatLayout:
+            id:relative_box
+            size_hint:.8,.6
+            MDHeroTo:
+                id:hero_image_city
+                size_hint:None,None
+                size:relative_box.size
+                pos_hint:{'top':1}
+            MDHeroTo:
+                id:hero_button_plus
+                size_hint:None,None
+                size:'80dp','80dp'
+                pos_hint:{'right':1}
+                y:relative_box.top - self.height/2
+        MDFloatLayout:
+            id:bottom_box
+            size_hint_y:.4
+            MDHeroTo:
+                id:hero_name_city
+                size_hint:None,None
+                size:'180dp','72dp'
+                y:bottom_box.top - self.height/2
+            MDBoxLayout:
+                orientation:'vertical'
+                adaptive_size:True
+                y:bottom_box.top - self.height
+                MDLabel:
+                    text:
+                        'jbkhbgctdx fytdydy tydyycff ytdydytdtf'\
+                        'lnjkjnbhbjhvhgvh cffdv ftdrtddr drrddrrd'\
+                        'jbhbhjb gyuyyguygu yguyguyguy gggy'
+                    adaptive_size:True
+                    -text_size:root.width - dp(100), None
+                    padding_x:'28dp'
+                    theme_text_color:'Hint'
+                MDBoxLayout:
+                    adaptive_height:True
+                    padding:'12dp'
+                    spacing:'12dp'
+                    MDIconButton:
+                        icon:'map-marker-outline'
+                    MDIconButton:
+                        icon:'map-search-outline'
+                    MDIconButton:
+                        icon:'home-outline'
+                    MDFlatButton:
+                        text:'[b]More[/b]'
+                        pos_hint:{'center_y':.5}
+    MDHeroTo:
+        id:hero_navigate
+        size_hint:None,None
+        size:'144dp', '48dp'
+        pos_hint:{'right':1}
+
+
+
+
+
+
+
+

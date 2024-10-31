@@ -1,0 +1,1 @@
+from .scale_label import ScaleLabel # NOQA

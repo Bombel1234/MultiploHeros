@@ -1,0 +1,82 @@
+
+
+<FirstScreenView>
+    md_bg_color:app.theme_cls.bg_dark
+    MDBoxLayout:
+        orientation:'vertical'
+        spacing:'12dp'
+        MDTopAppBar:
+            md_bg_color:root.md_bg_color
+            specific_text_color:'black'
+            left_action_items:[['sort-reverse-variant', lambda x:x]]
+            right_action_items:[['magnify', lambda x:x]]
+            elevation:0
+        MDBoxLayout:
+            adaptive_height:True
+            spacing:'8dp'
+            padding:0,0,'24dp',0
+            MDSeparator:
+                pos_hint:{'center_y':.5}
+                size_hint_x:None
+                width:"36dp"
+                color:'black'
+            MDHeroFrom:
+                id:hero_name_beaches
+                size_hint:None, None
+                size:'140dp', '42dp'
+                on_transform_in:
+                    root.hero_name_beaches_transform(lbl_beaches, .2, .5, dp(24))
+                on_transform_out:
+                    root.hero_name_beaches_transform(lbl_beaches, .2, 1, 0)
+                MDRelativeLayout:
+                    size_hint:None, None
+                    size:'140dp', '42dp'
+
+                    ScaleLabel:
+                        id:lbl_beaches
+                        text:'Beaches'
+                        font_size:'36sp'
+                        bold:True
+                        adaptive_size:True
+        MDLabel:
+            text:'Most Visited'
+            adaptive_height:True
+            bold:True
+            halign:'right'
+            padding_x:'24dp'
+        MDScrollView:
+            MDList:
+                id:card_box
+                spacing:'12dp'
+    MDHeroFrom:
+        id:hero_navigate
+        size_hint:None,None
+        size:'144dp', '48dp'
+        pos_hint:{'right':1}
+        y:-dp(48)
+        MDBoxLayout:
+            size_hint:None,None
+            size:'144dp', '48dp'
+            MDBoxLayout:
+                md_bg_color:'grey'
+                size_hint:None,None
+                size:'72dp','48dp'
+                padding:'12dp', 0, 0, 0
+                MDIconButton:
+                    icon:'chevron-left'
+            MDBoxLayout:
+                md_bg_color:'black'
+                size_hint:None,None
+                size:'72dp','48dp'
+                padding:'12dp', 0, 0, 0
+                MDIconButton:
+                    icon:'chevron-right'
+                    opposite_colors:True
+
+
+
+
+
+
+
+
